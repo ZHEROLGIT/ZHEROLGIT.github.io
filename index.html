@@ -77,7 +77,7 @@
 						<li>Links</li>
 						
 						
-						<li>A propos</li>
+						<li>Über</li>
 						
 					</ul>
 				</div>
@@ -197,6 +197,132 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-自学unity(二)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/08/自学unity(二)/" class="article-date">
+  	<time datetime="2017-05-08T15:50:35.860Z" itemprop="datePublished">2017-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="GUI游戏界面"><a href="#GUI游戏界面" class="headerlink" title="GUI游戏界面"></a>GUI游戏界面</h2><h4 id="GUI高级控件"><a href="#GUI高级控件" class="headerlink" title="GUI高级控件"></a>GUI高级控件</h4><p>1.Label控件</p>
+<p>作用：可以在游戏界面中以文本的形式展示出一段字符串信息。</p>
+<p>注意事项：编码格式修改为（utf-8），否则中文显示不出来。</p>
+<p>方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。</p>
+<p>代码示例：</p>
+<pre><code>//接受外部赋值字符串
+var str : String;
+//接受外部赋值贴图
+var imageTexture : Texture;
+//贴图宽度
+private var imageWidth : int;
+//贴图高度
+private var imageHeight : int;
+//当前屏幕宽度
+private var screenWidth : int;
+//当前屏幕高度
+private var screenHeight : int;
+
+fuction Start()
+{
+    //得到屏幕宽高
+    screenWidth = Screen.width;
+    screenHeight = Screen.height;
+    //得到图片宽高
+    imageWidth = imageTexture.width;
+    imageHeight = imageTexture.height;
+}
+
+fuction OnGUI()
+{
+    //将文字内容显示在屏幕中
+    GUI.Label(Rect(100,10,100,30),str);
+    GUI.Label(Rect(100,40,100,30),&quot;当前屏幕高：&quot; + screenHeight);
+    GUI.Label(Rect(100,80,100,30),&quot;当前屏幕宽：&quot; + screenWidth);
+    //将贴图显示在屏幕中
+    GUI.Label(Rect(100,120,imageWidth,imageHeight),imageTexture);
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-博客的一些注意事项" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/08/博客的一些注意事项/" class="article-date">
+  	<time datetime="2017-05-08T15:10:13.940Z" itemprop="datePublished">2017-05-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h3><p>1.上传一个新的文档：hexo g;hexo d;</p>
+<p>2.访问自己博客地址：注意是字母大小写，与github项目上项目名称一样。</p>
+<p>3.本地观看效果：hexo s;</p>
+<p>4.markdown标题格式后面加个空格，格式如“### 你好”。否则hexo辨别不出</p>
+<p>5.代码块的部分需要缩进4个空格或是一个制表符。</p>
+<p>6.无序列表直接使用星号，加号或减号作为列表标记，注意打完字符后需要加空格，有序列表直接使用数字，后面加空格。</p>
+<p>7.加图片的格式：![图片的替代文字] (图片地址)</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-自学unity(一)" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -410,8 +536,7 @@ GUI.Label(Rect(250,50,200,30),&quot;模型的旋转&quot; + transform.rotation);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##随笔</p>
-<p>之所以起这个名字，是因为虽然看完了《数学之美》但我却并不了解作者想要传达给我们的意思。所以，这算不上是一篇读后感，只能是我自己的一些想法（可能有些并不是书中所传导给我的）。</p>
+        <h2 id="随笔"><a href="#随笔" class="headerlink" title="随笔"></a>随笔</h2><p>之所以起这个名字，是因为虽然看完了《数学之美》但我却并不了解作者想要传达给我们的意思。所以，这算不上是一篇读后感，只能是我自己的一些想法（可能有些并不是书中所传导给我的）。</p>
 <p>《数学之美》，最初看这本书的兴趣是因为第一：他与数学有关；第二：可以装X。但是，当我看完了这本书，我发现并不是我所想的那样。</p>
 <p>简单！简单！简单！作者在这本书中多次写到简单是最美的!确实，我在高中学数学的时候最喜欢那些题目简单的题目（尽管老师说这种题一般都很难）。除了作者说的简单之美之外，在这本书中，作者用一种非计算机专业能看懂的语言向我们展示了多种算法，极尽算法之美。就目前我知识的水平来说，这本书最大的作用就是让我开拓了视野，丰富了我大脑的储备知识。虽然，里面的很多算法我都不是太了解（有些看了书还不懂，甚至用百度去了解），但是，这只是目前的状态，作为一个以后要成为程序员的人，算法什么的最终肯定要弄明白的。</p>
 <p>对这本书第一次的描述，我就写这么多。以后如果有时间的话，我还会再读一遍，到时候再写一篇吧！</p>
@@ -457,7 +582,7 @@ GUI.Label(Rect(250,50,200,30),&quot;模型的旋转&quot; + transform.rotation);
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>##看《肖申克的救赎》有感<br>忙着活，或忙着死。</p>
+        <h2 id="看《肖申克的救赎》有感"><a href="#看《肖申克的救赎》有感" class="headerlink" title="看《肖申克的救赎》有感"></a>看《肖申克的救赎》有感</h2><p>忙着活，或忙着死。</p>
 <p>故事的开头写到了主角安迪因为妻子偷情，想要去杀害妻子却没有实行，而之后妻子死了，自己虽然是有杀人动机的但却没有足够的证据和说服力来证明自己的清白，最终被判无期徒刑，来到了肖申克。影片到了这里，便开始引入了另一个重要人物：老囚犯瑞德。在整部影片中，导演通过瑞德的视角向我们展示了主角在肖申克的生活。在监狱的前两年，主角遭受了种种欺凌。之后，主角勇敢的为自己争取了一次机会，用自己的专业知识帮助监狱里最凶残的狱长躲过税收的麻烦。然后，全监狱的狱长，狱警都找他帮忙，而他也有了许多的自由的空间。之后，随着一个年轻的小伙子汤米的到来，主角无意知道杀害自己妻子的真正凶手，尽管安迪想要翻案，但监狱长从中作梗，秘密杀害了汤米。安迪知道自己无望出去。因此，越狱在他的头脑中形成了。于是，在一个雷电交加的夜晚，他爬过自己挖了十九年的通道，爬过五百码的化粪道，成功的离开了肖申克监狱。随后，他向记者报告了监狱贪污腐败的事，而他也重获新生。最后，他的好友瑞德也在假释后来到了他的身边。</p>
 <p>故事十分简单，如果用一句话来说就是主角成功越狱的故事。但是，这部电影吸引我的并不是这个故事。首先，我很佩服安迪的毅力，一条通道，足足挖了十九年，如果给我十九年的时间，我相信我是挖不出来的，更何况是在监狱那种看管严的情况下。第二，我佩服安迪的耐力，在前两年的监狱时光中，安迪虽然遭受到了种种欺凌，但他并没有放弃，特别是他在帮助自己的朋友拿到了酒之后，他一口酒也没喝，但他却是一副十分享受的样子，用影片的话来说，他在享受自由。可见这是一个多么豁达的人。第三，我佩服安迪的聪明才智，在他帮监狱长偷税的那一刻，他可能已经想好以后的路了，并且，这种聪明也在他对瑞德说的话体现了出来，他叫瑞德出去后到一个地方找到最大的树，树下有他留给他的东西，而这个东西，在主角越狱之前是没有的，可见主角的目光之远。</p>
 <p>就我看来，除了主角，我对影片中瑞德，汤米以及监狱的图书馆管理员这三个人物印象最深。其中，图书馆管理员是一位将人生的一大半都放在监狱里的人，用瑞德的话来说，他是离不开监狱的人，他已经深深的离不开此地。最后，这位老人在出狱后因为不适应生活等其他原因而上吊自杀了。汤米，一个朝气蓬勃的年轻人，他为主角带来了希望，而主角也将他视为希望，但是，因为他挡在监狱长发财的道路上，最终也被监狱长害死了。瑞德，故事的整个见证人，他与主角有着非常深厚的友谊，因为他的资格老，他在监狱也能得到他想要的任何都东西，而正因为这样，主角也经常找他买东西。最后他也得到了主角的帮助，开始了新的生活。这三个人各有各的人生，有的是完美的，有的是悲壮的。但是，这就是人生，这就是生活，命运全掌握在自己的手中，你想把他变成什么样，他就是什么样。</p>
