@@ -9,13 +9,11 @@
   <meta name="description" content="GUI游戏界面GUI高级控件1.Label控件
 作用：可以在游戏界面中以文本的形式展示出一段字符串信息。
 注意事项：编码格式修改为（utf-8），否则中文显示不出来。
-方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。
+方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。OnGUI()方法，界面绘制方法，所有GUI的绘制都需要在这个方法中实现
 代码示例：
 //接受外部赋值字符串
 var str : String;
-//接受外部赋值贴图
-var imageTexture : Texture;
-/">
+//接受">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2017/05/08/自学unity(二)/index.html">
@@ -23,26 +21,22 @@ var imageTexture : Texture;
 <meta property="og:description" content="GUI游戏界面GUI高级控件1.Label控件
 作用：可以在游戏界面中以文本的形式展示出一段字符串信息。
 注意事项：编码格式修改为（utf-8），否则中文显示不出来。
-方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。
+方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。OnGUI()方法，界面绘制方法，所有GUI的绘制都需要在这个方法中实现
 代码示例：
 //接受外部赋值字符串
 var str : String;
-//接受外部赋值贴图
-var imageTexture : Texture;
-/">
-<meta property="og:updated_time" content="2017-05-09T04:42:22.400Z">
+//接受">
+<meta property="og:updated_time" content="2017-05-09T15:21:16.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="GUI游戏界面GUI高级控件1.Label控件
 作用：可以在游戏界面中以文本的形式展示出一段字符串信息。
 注意事项：编码格式修改为（utf-8），否则中文显示不出来。
-方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。
+方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。OnGUI()方法，界面绘制方法，所有GUI的绘制都需要在这个方法中实现
 代码示例：
 //接受外部赋值字符串
 var str : String;
-//接受外部赋值贴图
-var imageTexture : Texture;
-/">
+//接受">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -105,7 +99,7 @@ var imageTexture : Texture;
 						<li>Links</li>
 						
 						
-						<li>Über</li>
+						<li>About</li>
 						
 					</ul>
 				</div>
@@ -242,7 +236,7 @@ var imageTexture : Texture;
         <h2 id="GUI游戏界面"><a href="#GUI游戏界面" class="headerlink" title="GUI游戏界面"></a>GUI游戏界面</h2><h4 id="GUI高级控件"><a href="#GUI高级控件" class="headerlink" title="GUI高级控件"></a>GUI高级控件</h4><p>1.Label控件</p>
 <p>作用：可以在游戏界面中以文本的形式展示出一段字符串信息。</p>
 <p>注意事项：编码格式修改为（utf-8），否则中文显示不出来。</p>
-<p>方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。</p>
+<p>方法：Start()方法，只执行一次，需将所有初始化的相关代码都放在此方法内。OnGUI()方法，界面绘制方法，所有GUI的绘制都需要在这个方法中实现</p>
 <p>代码示例：</p>
 <pre><code>//接受外部赋值字符串
 var str : String;
@@ -276,6 +270,52 @@ fuction OnGUI()
     //将贴图显示在屏幕中
     GUI.Label(Rect(100,120,imageWidth,imageHeight),imageTexture);
 }
+</code></pre><p>2.Button控件</p>
+<p>作用：判断用户在程序中的一些操作行为。</p>
+<p>注意事项：按钮共有三个基本状态：未点击状态、击中状态、点击后状态。按展现方式分为普通按钮和图片按钮。</p>
+<p>方法：GUI.Button()方法添加一个按钮，当该方法返回true时，表示按钮被按下。GUI.RepeatButton()方法可添加一个连续按钮，用于监听该按钮按下中的状态。</p>
+<pre><code>//按钮贴图
+var buttonTexture : Texture2D;
+//提示信息
+var str : String;
+//时间计数器
+private var frameTime : int;
+
+fuction Start()
+{
+        //初始化赋值
+        str = &quot;请您点击按钮&quot;;
+}
+
+fuction OnGUI()
+{
+    //显示信息提示内容
+    GUI.Label(Rect(10,10,Screen.width,30),str);
+    if(GUI.Button(Rect(10,50,buttonTexture.width,buttonTexture.height),buttonTexture)){
+        //点击按钮修改提示信息
+        str = &quot;您点击了图片按钮&quot;;
+    }
+    //设置按钮中文字的颜色
+    GUI.color  = Color.green;
+    //设置按钮的背景色
+    GUI.backgroundColor = Color.red;
+
+    if(GUI.Button(Rect(10,200,70,30),&quot;文字按扭&quot;)){
+        //点击按钮修改提示信息
+        str = &quot;您点击了文字按钮&quot;;
+    }
+    //设置按钮中文字的颜色
+    GUI.color  = Color.yellow;
+    //设置按钮的背景色
+    GUI.backgroundColor = Color.black;
+
+    if(GUI.RepeatButton(Rect(10,250,100,30),&quot;按钮按下中&quot;)){
+        //点击按钮修改提示信息
+        str = &quot;按钮按下中的时间：&quot; + frameTime;
+        //时间计数器
+        frameTime++;
+    }
+}
 </code></pre>
       
     </div>
@@ -284,6 +324,15 @@ fuction OnGUI()
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/07/20/数据结构线性表2.1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
   
   
     <a href="/2017/05/08/博客的一些注意事项/" id="article-nav-older" class="article-nav-link-wrap">
